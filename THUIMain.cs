@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using THLIB;
+
 
 namespace THUI
 {
@@ -13,6 +15,8 @@ namespace THUI
         {
             LogoutBtn.Hide();
             ScheduleBtn.Hide();
+         FileOperations.FileCreate();
+            
         }
         #region buttons
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -85,6 +89,18 @@ namespace THUI
 
         private void EditEmployeesBtn_Click(object sender, EventArgs e)
         {
+             if (!panel1.Controls.Contains(UcEditUsers.Instance))
+            {
+                panel1.Controls.Add(UcEditUsers.Instance);
+                UcEditUsers.Instance.Dock = DockStyle.Fill;
+                UcEditUsers.Instance.BringToFront();
+                HideLogin();
+            }
+            else
+            {
+                UcEditUsers.Instance.BringToFront();
+                HideLogin();
+            }
         }
 
         private void EditScheduleBtn_Click(object sender, EventArgs e)

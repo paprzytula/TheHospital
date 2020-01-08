@@ -29,106 +29,76 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.peselDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adminDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobPositionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.EmployeeListBox = new System.Windows.Forms.ListBox();
+            this.LoadFromFileBtn = new System.Windows.Forms.Button();
+            this.EmployeeListLbl = new System.Windows.Forms.Label();
+            this.SearchFileBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.peselDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.adminDataGridViewCheckBoxColumn,
-            this.usernameDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.jobPositionDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.employeeBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(527, 407);
-            this.dataGridView1.TabIndex = 0;
             // 
             // employeeBindingSource
             // 
             this.employeeBindingSource.DataSource = typeof(THLIB.Employee);
+            this.employeeBindingSource.CurrentChanged += new System.EventHandler(this.employeeBindingSource_CurrentChanged);
             // 
-            // peselDataGridViewTextBoxColumn
+            // EmployeeListBox
             // 
-            this.peselDataGridViewTextBoxColumn.DataPropertyName = "Pesel";
-            this.peselDataGridViewTextBoxColumn.HeaderText = "Pesel";
-            this.peselDataGridViewTextBoxColumn.Name = "peselDataGridViewTextBoxColumn";
+            this.EmployeeListBox.FormattingEnabled = true;
+            this.EmployeeListBox.Location = new System.Drawing.Point(16, 55);
+            this.EmployeeListBox.Name = "EmployeeListBox";
+            this.EmployeeListBox.Size = new System.Drawing.Size(187, 173);
+            this.EmployeeListBox.TabIndex = 0;
             // 
-            // firstNameDataGridViewTextBoxColumn
+            // LoadFromFileBtn
             // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.LoadFromFileBtn.Location = new System.Drawing.Point(209, 205);
+            this.LoadFromFileBtn.Name = "LoadFromFileBtn";
+            this.LoadFromFileBtn.Size = new System.Drawing.Size(75, 23);
+            this.LoadFromFileBtn.TabIndex = 1;
+            this.LoadFromFileBtn.Text = "Wczytaj";
+            this.LoadFromFileBtn.UseVisualStyleBackColor = true;
             // 
-            // lastNameDataGridViewTextBoxColumn
+            // EmployeeListLbl
             // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.EmployeeListLbl.AutoSize = true;
+            this.EmployeeListLbl.Location = new System.Drawing.Point(16, 36);
+            this.EmployeeListLbl.Name = "EmployeeListLbl";
+            this.EmployeeListLbl.Size = new System.Drawing.Size(96, 13);
+            this.EmployeeListLbl.TabIndex = 2;
+            this.EmployeeListLbl.Text = "Lista Pracowników";
             // 
-            // adminDataGridViewCheckBoxColumn
+            // SearchFileBtn
             // 
-            this.adminDataGridViewCheckBoxColumn.DataPropertyName = "Admin";
-            this.adminDataGridViewCheckBoxColumn.HeaderText = "Admin";
-            this.adminDataGridViewCheckBoxColumn.Name = "adminDataGridViewCheckBoxColumn";
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            // 
-            // jobPositionDataGridViewTextBoxColumn
-            // 
-            this.jobPositionDataGridViewTextBoxColumn.DataPropertyName = "JobPosition";
-            this.jobPositionDataGridViewTextBoxColumn.HeaderText = "JobPosition";
-            this.jobPositionDataGridViewTextBoxColumn.Name = "jobPositionDataGridViewTextBoxColumn";
+            this.SearchFileBtn.Location = new System.Drawing.Point(209, 176);
+            this.SearchFileBtn.Name = "SearchFileBtn";
+            this.SearchFileBtn.Size = new System.Drawing.Size(75, 23);
+            this.SearchFileBtn.TabIndex = 3;
+            this.SearchFileBtn.Text = "Przeglądaj...";
+            this.SearchFileBtn.UseVisualStyleBackColor = true;
+            this.SearchFileBtn.Click += new System.EventHandler(this.SearchFileBtn_Click);
             // 
             // UcUsersList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.SearchFileBtn);
+            this.Controls.Add(this.EmployeeListLbl);
+            this.Controls.Add(this.LoadFromFileBtn);
+            this.Controls.Add(this.EmployeeListBox);
             this.Name = "UcUsersList";
             this.Size = new System.Drawing.Size(565, 442);
-            this.Load += new System.EventHandler(this.UcUsersList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn peselDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn adminDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobPositionDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource employeeBindingSource;
+        private System.Windows.Forms.ListBox EmployeeListBox;
+        private System.Windows.Forms.Button LoadFromFileBtn;
+        private System.Windows.Forms.Label EmployeeListLbl;
+        private System.Windows.Forms.Button SearchFileBtn;
     }
 }

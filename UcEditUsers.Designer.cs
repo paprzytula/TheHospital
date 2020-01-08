@@ -48,6 +48,8 @@
             this.EditLastNameTxt = new System.Windows.Forms.TextBox();
             this.EditFirstNameTxt = new System.Windows.Forms.TextBox();
             this.EditAdminLbl = new System.Windows.Forms.Label();
+            this.ValidatePeselBtn = new System.Windows.Forms.Button();
+            this.ValidatePeselLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // EditAdminCheck
@@ -249,9 +251,30 @@
             this.EditAdminLbl.TabIndex = 38;
             this.EditAdminLbl.Text = "Administrator";
             // 
+            // ValidatePeselBtn
+            // 
+            this.ValidatePeselBtn.Location = new System.Drawing.Point(345, 56);
+            this.ValidatePeselBtn.Name = "ValidatePeselBtn";
+            this.ValidatePeselBtn.Size = new System.Drawing.Size(107, 23);
+            this.ValidatePeselBtn.TabIndex = 58;
+            this.ValidatePeselBtn.Text = "Sprawdź poprawność";
+            this.ValidatePeselBtn.UseVisualStyleBackColor = true;
+            this.ValidatePeselBtn.Click += new System.EventHandler(this.ValidatePeselBtn_Click);
+            // 
+            // ValidatePeselLbl
+            // 
+            this.ValidatePeselLbl.AutoSize = true;
+            this.ValidatePeselLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ValidatePeselLbl.Location = new System.Drawing.Point(358, 85);
+            this.ValidatePeselLbl.Name = "ValidatePeselLbl";
+            this.ValidatePeselLbl.Size = new System.Drawing.Size(0, 13);
+            this.ValidatePeselLbl.TabIndex = 59;
+            // 
             // UcEditUsers
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.Controls.Add(this.ValidatePeselLbl);
+            this.Controls.Add(this.ValidatePeselBtn);
             this.Controls.Add(this.EditAdminCheck);
             this.Controls.Add(this.EditSpecializationCombo);
             this.Controls.Add(this.EditJobCombo);
@@ -301,5 +324,7 @@
         private System.Windows.Forms.TextBox EditLastNameTxt;
         private System.Windows.Forms.TextBox EditFirstNameTxt;
         private System.Windows.Forms.Label EditAdminLbl;
+        private System.Windows.Forms.Button ValidatePeselBtn;
+        private System.Windows.Forms.Label ValidatePeselLbl;
     }
 }
