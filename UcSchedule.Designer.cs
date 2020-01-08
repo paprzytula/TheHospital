@@ -59,8 +59,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.monthView1);
             this.Name = "UcSchedule";
-            this.Size = new System.Drawing.Size(565, 442);
-          
+            this.Size = new System.Drawing.Size(649, 442);
             this.ResumeLayout(false);
 
         }

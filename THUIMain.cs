@@ -14,8 +14,10 @@ namespace THUI
         private void THUIMain_Load(object sender, EventArgs e)
         {
             LogoutBtn.Hide();
-            ScheduleBtn.Hide();
-         FileOperations.FileCreate();
+            ScheduleBtn.Enabled=false;
+         EditScheduleBtn.Enabled=false;
+            EmployeesListBtn.Enabled=false;
+            EditEmployeesBtn.Enabled=false;
             
         }
         #region buttons
@@ -28,6 +30,9 @@ namespace THUI
         {
             UcSchedule.Instance.Hide();
             UcUsersList.Instance.Hide();
+            UcEditUsers.Instance.Hide();
+            
+            
             ShowLogin();
         }
 
@@ -59,12 +64,18 @@ namespace THUI
                     UcSchedule.Instance.Dock = DockStyle.Fill;
                     UcSchedule.Instance.BringToFront();
                     HideLogin();
+                    ScheduleBtn.Enabled=true;
+                    EmployeesListBtn.Enabled=true;
+                    EditEmployeesBtn.Enabled=true;
                 }
                 else
                 {
                     UcSchedule.Instance.BringToFront();
                     UcSchedule.Instance.Show();
                     HideLogin();
+                    ScheduleBtn.Enabled=true;
+                    EmployeesListBtn.Enabled=true;
+                    EditEmployeesBtn.Enabled=true;
                 }
             }
             else { MessageBox.Show("Login lub hasło niepoprawne."); }
@@ -104,7 +115,7 @@ namespace THUI
         }
 
         private void EditScheduleBtn_Click(object sender, EventArgs e)
-        {
+        {// todo add enable users schedule after login
         }
         #endregion
 

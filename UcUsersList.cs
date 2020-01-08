@@ -34,5 +34,10 @@ namespace THUI
         {
             GetFileFromLocation();
         }
+
+        private void LoadFromFileBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

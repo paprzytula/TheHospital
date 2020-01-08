@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ucSchedule1 = new THUI.UcSchedule();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.UsernameTxt = new System.Windows.Forms.TextBox();
@@ -37,7 +38,6 @@
             this.PasswordLbl = new System.Windows.Forms.Label();
             this.ScheduleBtn = new System.Windows.Forms.Button();
             this.LoginBtn = new System.Windows.Forms.Button();
-            this.ucSchedule1 = new THUI.UcSchedule();
             this.EmployeesListBtn = new System.Windows.Forms.Button();
             this.EditEmployeesBtn = new System.Windows.Forms.Button();
             this.EditScheduleBtn = new System.Windows.Forms.Button();
@@ -49,12 +49,22 @@
             this.panel1.Controls.Add(this.ucSchedule1);
             this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(571, 448);
+            this.panel1.Size = new System.Drawing.Size(652, 448);
             this.panel1.TabIndex = 0;
+            // 
+            // ucSchedule1
+            // 
+            this.ucSchedule1.AutoSize = true;
+            this.ucSchedule1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ucSchedule1.Location = new System.Drawing.Point(3, 3);
+            this.ucSchedule1.Name = "ucSchedule1";
+            this.ucSchedule1.Size = new System.Drawing.Size(649, 445);
+            this.ucSchedule1.TabIndex = 0;
+            this.ucSchedule1.Visible = false;
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(672, 415);
+            this.ExitBtn.Location = new System.Drawing.Point(751, 416);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(116, 23);
             this.ExitBtn.TabIndex = 1;
@@ -64,7 +74,7 @@
             // 
             // LogoutBtn
             // 
-            this.LogoutBtn.Location = new System.Drawing.Point(672, 270);
+            this.LogoutBtn.Location = new System.Drawing.Point(751, 271);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(116, 23);
             this.LogoutBtn.TabIndex = 2;
@@ -74,14 +84,14 @@
             // 
             // UsernameTxt
             // 
-            this.UsernameTxt.Location = new System.Drawing.Point(689, 149);
+            this.UsernameTxt.Location = new System.Drawing.Point(768, 150);
             this.UsernameTxt.Name = "UsernameTxt";
             this.UsernameTxt.Size = new System.Drawing.Size(100, 20);
             this.UsernameTxt.TabIndex = 3;
             // 
             // PasswordTxt
             // 
-            this.PasswordTxt.Location = new System.Drawing.Point(689, 175);
+            this.PasswordTxt.Location = new System.Drawing.Point(768, 176);
             this.PasswordTxt.Name = "PasswordTxt";
             this.PasswordTxt.Size = new System.Drawing.Size(100, 20);
             this.PasswordTxt.TabIndex = 4;
@@ -89,7 +99,7 @@
             // UsernameLbl
             // 
             this.UsernameLbl.AutoSize = true;
-            this.UsernameLbl.Location = new System.Drawing.Point(579, 156);
+            this.UsernameLbl.Location = new System.Drawing.Point(658, 157);
             this.UsernameLbl.Name = "UsernameLbl";
             this.UsernameLbl.Size = new System.Drawing.Size(104, 13);
             this.UsernameLbl.TabIndex = 5;
@@ -98,7 +108,7 @@
             // PasswordLbl
             // 
             this.PasswordLbl.AutoSize = true;
-            this.PasswordLbl.Location = new System.Drawing.Point(647, 182);
+            this.PasswordLbl.Location = new System.Drawing.Point(726, 183);
             this.PasswordLbl.Name = "PasswordLbl";
             this.PasswordLbl.Size = new System.Drawing.Size(36, 13);
             this.PasswordLbl.TabIndex = 6;
@@ -106,7 +116,7 @@
             // 
             // ScheduleBtn
             // 
-            this.ScheduleBtn.Location = new System.Drawing.Point(672, 12);
+            this.ScheduleBtn.Location = new System.Drawing.Point(751, 13);
             this.ScheduleBtn.Name = "ScheduleBtn";
             this.ScheduleBtn.Size = new System.Drawing.Size(116, 23);
             this.ScheduleBtn.TabIndex = 7;
@@ -116,7 +126,7 @@
             // 
             // LoginBtn
             // 
-            this.LoginBtn.Location = new System.Drawing.Point(672, 241);
+            this.LoginBtn.Location = new System.Drawing.Point(751, 242);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(117, 23);
             this.LoginBtn.TabIndex = 8;
@@ -124,19 +134,9 @@
             this.LoginBtn.UseVisualStyleBackColor = true;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
-            // ucSchedule1
-            // 
-            this.ucSchedule1.AutoSize = true;
-            this.ucSchedule1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ucSchedule1.Location = new System.Drawing.Point(3, 3);
-            this.ucSchedule1.Name = "ucSchedule1";
-            this.ucSchedule1.Size = new System.Drawing.Size(565, 442);
-            this.ucSchedule1.TabIndex = 0;
-            this.ucSchedule1.Visible = false;
-            // 
             // EmployeesListBtn
             // 
-            this.EmployeesListBtn.Location = new System.Drawing.Point(673, 70);
+            this.EmployeesListBtn.Location = new System.Drawing.Point(752, 71);
             this.EmployeesListBtn.Name = "EmployeesListBtn";
             this.EmployeesListBtn.Size = new System.Drawing.Size(116, 23);
             this.EmployeesListBtn.TabIndex = 9;
@@ -146,7 +146,7 @@
             // 
             // EditEmployeesBtn
             // 
-            this.EditEmployeesBtn.Location = new System.Drawing.Point(673, 99);
+            this.EditEmployeesBtn.Location = new System.Drawing.Point(752, 100);
             this.EditEmployeesBtn.Name = "EditEmployeesBtn";
             this.EditEmployeesBtn.Size = new System.Drawing.Size(116, 23);
             this.EditEmployeesBtn.TabIndex = 10;
@@ -156,7 +156,7 @@
             // 
             // EditScheduleBtn
             // 
-            this.EditScheduleBtn.Location = new System.Drawing.Point(673, 41);
+            this.EditScheduleBtn.Location = new System.Drawing.Point(752, 42);
             this.EditScheduleBtn.Name = "EditScheduleBtn";
             this.EditScheduleBtn.Size = new System.Drawing.Size(116, 23);
             this.EditScheduleBtn.TabIndex = 11;
@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(880, 453);
             this.Controls.Add(this.EditScheduleBtn);
             this.Controls.Add(this.EditEmployeesBtn);
             this.Controls.Add(this.EmployeesListBtn);
