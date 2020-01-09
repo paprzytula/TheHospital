@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.EditSpecializationCombo = new System.Windows.Forms.ComboBox();
             this.EditJobCombo = new System.Windows.Forms.ComboBox();
             this.EditSpecializationLbl = new System.Windows.Forms.Label();
@@ -66,9 +65,7 @@
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specialization = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // EditSpecializationCombo
@@ -87,7 +84,6 @@
             // 
             // EditJobCombo
             // 
-            this.EditJobCombo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "JobPosition", true));
             this.EditJobCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.EditJobCombo.FormattingEnabled = true;
             this.EditJobCombo.Items.AddRange(new object[] {
@@ -136,7 +132,6 @@
             // 
             // EditPeselTxt
             // 
-            this.EditPeselTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Pesel", true));
             this.EditPeselTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.EditPeselTxt.Location = new System.Drawing.Point(339, 165);
             this.EditPeselTxt.Name = "EditPeselTxt";
@@ -425,10 +420,6 @@
             this.specialization.Name = "specialization";
             this.specialization.ReadOnly = true;
             // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataSource = typeof(THLIB.Employee);
-            // 
             // UcEditUsers
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -465,7 +456,6 @@
             this.Size = new System.Drawing.Size(649, 445);
             this.Load += new System.EventHandler(this.UcEditUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,6 +499,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn specialization;
-        private System.Windows.Forms.BindingSource employeeBindingSource;
     }
 }
