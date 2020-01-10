@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using THLIB;
 using Newtonsoft.Json;
+using System.Linq;
+
 namespace THUI
 {
     public partial class UcEditUsers : UserControl
@@ -119,10 +121,10 @@ namespace THUI
 
         // todo add all visible fields validation before adding new user
 
-        //  public Dictionary<string, List<EmployeesCollection>> EmployeesDictionary = new Dictionary<string, List<EmployeesCollection>>();
+
         // todo tryAdd if doesn't exist
         // employee.EmployeesList.Add(new
-
+        
         //    FirstName= EditFirstNameTxt.Text;
         //employee.Pesel= EditPeselTxt.Text;
         //employee.JobPosition=EditJobCombo.Text;
@@ -184,10 +186,112 @@ namespace THUI
         private void UcEditUsers_Load(object sender, EventArgs e)
         {
             EditSpecializationCombo.Enabled = false;
-            EditJobCombo.Enabled = false;
+            EditJobCombo.Enabled = true;
+           var _employeeDataArray = from row in THLIB.Employee.AllEmployeeDictionary select new {pesel = row.Key, row = row.Value };
+            dataGridView1.DataSource = THLIB.Employee.AllEmployeeDictionary.ToArray();
             
         }
-       
 
+        private void ValidateUserExistLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ValidatePasswordsMatchBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ValidatePeselLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditSpecializationCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ValidatePwzNummerLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditSpecializationLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditJobLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditPeselLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditPeselTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditPwzLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditPwzTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RepeatPasswordLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditPasswordLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditUsernameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditLastNameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditFistNameLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditUsernameTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditPasswordTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditLastNameTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditFirstNameTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
