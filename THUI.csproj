@@ -99,6 +99,8 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\THLIB.Employee.datasource" />
+    <None Include="Properties\DataSources\THUIMain.datasource" />
+    <None Include="Properties\DataSources\UcEditUsers.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

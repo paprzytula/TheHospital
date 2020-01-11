@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using THLIB;
-using Newtonsoft.Json;
-using System.Linq;
 
 namespace THUI
 {
@@ -16,14 +16,40 @@ namespace THUI
                 if (_instance == null)
                 {
                     _instance = new UcEditUsers();
+
                 }
                 return _instance;
             }
         }
-
+       
         public UcEditUsers()
         {
             InitializeComponent();
+
+        }
+
+        
+
+
+
+        private void UcEditUsers_Load(object sender, EventArgs e)
+        {
+            EditSpecializationCombo.Enabled = false;
+            EditJobCombo.Enabled = true;
+
+            //employeeBindingSource.Add(new Employee(){Pesel="0", Imię = "admin", JobPosition="Lekarz", Nazwisko="Admin", Hasło ="admin",NazwaUżytkownika= "admin" });
+            ////table.Columns.Add("Pesel", typeof(string));
+            //table.Columns.Add("Imię", typeof(string));
+            //table.Columns.Add("Nazwisko", typeof(string));
+            //table.Columns.Add("Nazwa użytkownika", typeof(string));
+            //table.Columns.Add("Stanowisko", typeof(string));
+            //table.Columns.Add("Hasło", typeof(string));
+            //table.Columns.Add("Specjalizacja", typeof(string));
+            //table.Columns.Add("Numer PWZ", typeof(int));
+           // employeeBindingSource = Hospital.AllEmployee;
+           
+
+     dataGridView1.DataSource = Hospital.AllEmployee;
         }
 
         private void ValidatePeselBtn_Click(object sender, EventArgs e)
@@ -67,20 +93,34 @@ namespace THUI
 
         private void AddEmployeeBtn_Click(object sender, EventArgs e)
         {
+            Employee employee = new Employee();
+            // todo add rows with data on click
+            int n = dataGridView1.Rows.Add();
+            foreach (DataGridViewRow row in this.dataGridView1.SelectedRows)
+        {
+            Employee emp = row.DataBoundItem as Employee;
+            
+        }
+
             switch (EditJobCombo.Text)
             {
                 case "Administrator":
                     {
-                        Employee employee = new Employee
+                        Employee employee1 = new Employee
                         {
                             Pesel = EditPeselTxt.Text,
-                            JobPosition = EditJobCombo.Text,
-                            FirstName = EditFirstNameTxt.Text,
-                            LastName = EditLastNameTxt.Text,
-                            Password = EditPasswordTxt.Text,
-                            Username = EditUsernameTxt.Text
+                            Stanowisko = EditJobCombo.Text,
+                            Imię = EditFirstNameTxt.Text,
+                            Nazwisko = EditLastNameTxt.Text,
+                            Hasło = EditPasswordTxt.Text,
+                            NazwaUżytkownika = EditUsernameTxt.Text
                         };
-                        Employee.AllEmployeeDictionary.Add(employee.Username, employee);
+
+                        // check if the object exist
+                        if (!Hospital.AllEmployee.Any(x => x.Pesel == employee1.Pesel))
+                        {
+                            Hospital.AllEmployee.Add(employee1);
+                        }
                     }
                     break;
 
@@ -89,46 +129,46 @@ namespace THUI
                         Doctor doctor = new Doctor()
                         {
                             Pesel = EditPeselTxt.Text,
-                            JobPosition = EditJobCombo.Text,
-                            FirstName = EditFirstNameTxt.Text,
-                            LastName = EditLastNameTxt.Text,
-                            Password = EditPasswordTxt.Text,
-                            Username = EditUsernameTxt.Text,
-                            Specialization = EditSpecializationCombo.Text,
-                            NummerPwz = int.Parse(EditPwzTxt.Text)
+                            Stanowisko = EditJobCombo.Text,
+                            Imię = EditFirstNameTxt.Text,
+                            Nazwisko = EditLastNameTxt.Text,
+                            Hasło = EditPasswordTxt.Text,
+                            NazwaUżytkownika = EditUsernameTxt.Text,
+                            Specjalizacja = EditSpecializationCombo.Text,
+                            NumerPWZ = int.Parse(EditPwzTxt.Text)
                         };
 
-                        Doctor.AllEmployeeDictionary.Add(doctor.Username, doctor);
+                        if (!(Hospital.AllEmployee.Any(x => x.Pesel == doctor.Pesel)))
+                        {
+                            Hospital.AllEmployee.Add(doctor);
+                        }
                     }
-                        break;
+                    break;
+
                 case "Pielęgniarka":
                     {
                         Nurse nurse = new Nurse
                         {
                             Pesel = EditPeselTxt.Text,
-                            JobPosition = EditJobCombo.Text,
-                            FirstName = EditFirstNameTxt.Text,
-                            LastName = EditLastNameTxt.Text,
-                            Password = EditPasswordTxt.Text,
-                            Username = EditUsernameTxt.Text
+                            Stanowisko = EditJobCombo.Text,
+                            Imię = EditFirstNameTxt.Text,
+                            Nazwisko = EditLastNameTxt.Text,
+                            Hasło = EditPasswordTxt.Text,
+                            NazwaUżytkownika = EditUsernameTxt.Text
                         };
-                        Nurse.AllEmployeeDictionary.Add(nurse.Username, nurse);
+                        if (!(Hospital.AllEmployee.Any(x => x.Pesel == nurse.Pesel)))
+                        {
+                            Hospital.AllEmployee.Add(nurse);
+                        }
                     }
-                        break;
-
+                    break;
             }
         }//end of private void AddEmployeeBtn_Click
 
         // todo add all visible fields validation before adding new user
 
-
         // todo tryAdd if doesn't exist
         // employee.EmployeesList.Add(new
-        
-        //    FirstName= EditFirstNameTxt.Text;
-        //employee.Pesel= EditPeselTxt.Text;
-        //employee.JobPosition=EditJobCombo.Text;
-        //employee.Password=EditPasswordTxt.Text;
 
         private void EditEmployeeBtn_Click(object sender, EventArgs e)
         {
@@ -181,115 +221,6 @@ namespace THUI
                 EditSpecializationCombo.Enabled = false;
                 EditSpecializationCombo.Text = String.Empty;
             }
-        }
-
-        private void UcEditUsers_Load(object sender, EventArgs e)
-        {
-            EditSpecializationCombo.Enabled = false;
-            EditJobCombo.Enabled = true;
-           var _employeeDataArray = from row in THLIB.Employee.AllEmployeeDictionary select new {pesel = row.Key, row = row.Value };
-            dataGridView1.DataSource = THLIB.Employee.AllEmployeeDictionary.ToArray();
-            
-        }
-
-        private void ValidateUserExistLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ValidatePasswordsMatchBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ValidatePeselLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditSpecializationCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ValidatePwzNummerLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditSpecializationLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditJobLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditPeselLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditPeselTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditPwzLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditPwzTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RepeatPasswordLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditPasswordLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditUsernameLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditLastNameLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditFistNameLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditUsernameTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditPasswordTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditLastNameTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EditFirstNameTxt_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         

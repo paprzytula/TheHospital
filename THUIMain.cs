@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using THLIB;
 
@@ -10,7 +11,7 @@ namespace THUI
         {
             InitializeComponent();
         }
-
+        public DataTable collection; 
         private void THUIMain_Load(object sender, EventArgs e)
         {
             LogoutBtn.Hide();
@@ -18,8 +19,8 @@ namespace THUI
             EditScheduleBtn.Enabled = false;
             EmployeesListBtn.Enabled = false;
             EditEmployeesBtn.Enabled = false;
-            FileOperations.FileExistCheck();
-            FileOperations.GetFileFromLocation();
+            collection = FileOperations.FileExistCheck();
+          
         }
 
         #region buttons
@@ -91,11 +92,13 @@ namespace THUI
                 UcUsersList.Instance.Dock = DockStyle.Fill;
                 UcUsersList.Instance.BringToFront();
                 HideLogin();
+                
             }
             else
             {
                 UcUsersList.Instance.BringToFront();
                 HideLogin();
+                
             }
         }
 
@@ -107,11 +110,13 @@ namespace THUI
                 UcEditUsers.Instance.Dock = DockStyle.Fill;
                 UcEditUsers.Instance.BringToFront();
                 HideLogin();
+
             }
             else
             {
                 UcEditUsers.Instance.BringToFront();
                 HideLogin();
+
             }
         }
 

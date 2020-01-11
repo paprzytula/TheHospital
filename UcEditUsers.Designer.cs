@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.EditSpecializationCombo = new System.Windows.Forms.ComboBox();
             this.EditJobCombo = new System.Windows.Forms.ComboBox();
             this.EditSpecializationLbl = new System.Windows.Forms.Label();
@@ -58,17 +57,7 @@
             this.ValidateUserExistLbl = new System.Windows.Forms.Label();
             this.ValidatePwzNummerLbl = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.jobPosition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pesel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nummerPwz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specialization = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // EditSpecializationCombo
@@ -80,11 +69,10 @@
             "Urolog",
             "Neurolog",
             "Laryngolog"});
-            this.EditSpecializationCombo.Location = new System.Drawing.Point(326, 380);
+            this.EditSpecializationCombo.Location = new System.Drawing.Point(620, 379);
             this.EditSpecializationCombo.Name = "EditSpecializationCombo";
             this.EditSpecializationCombo.Size = new System.Drawing.Size(176, 21);
             this.EditSpecializationCombo.TabIndex = 56;
-            this.EditSpecializationCombo.SelectedIndexChanged += new System.EventHandler(this.EditSpecializationCombo_SelectedIndexChanged);
             // 
             // EditJobCombo
             // 
@@ -94,7 +82,7 @@
             "Lekarz",
             "Administrator",
             "Pielęgniarka"});
-            this.EditJobCombo.Location = new System.Drawing.Point(326, 191);
+            this.EditJobCombo.Location = new System.Drawing.Point(620, 190);
             this.EditJobCombo.Name = "EditJobCombo";
             this.EditJobCombo.Size = new System.Drawing.Size(176, 21);
             this.EditJobCombo.TabIndex = 55;
@@ -106,131 +94,120 @@
             this.EditSpecializationLbl.AutoSize = true;
             this.EditSpecializationLbl.BackColor = System.Drawing.Color.Transparent;
             this.EditSpecializationLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditSpecializationLbl.Location = new System.Drawing.Point(234, 385);
+            this.EditSpecializationLbl.Location = new System.Drawing.Point(528, 384);
             this.EditSpecializationLbl.Name = "EditSpecializationLbl";
             this.EditSpecializationLbl.Size = new System.Drawing.Size(69, 13);
             this.EditSpecializationLbl.TabIndex = 54;
             this.EditSpecializationLbl.Text = "Specjalizacja";
-            this.EditSpecializationLbl.Click += new System.EventHandler(this.EditSpecializationLbl_Click);
             // 
             // EditJobLbl
             // 
             this.EditJobLbl.AutoSize = true;
             this.EditJobLbl.BackColor = System.Drawing.Color.Transparent;
             this.EditJobLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditJobLbl.Location = new System.Drawing.Point(241, 199);
+            this.EditJobLbl.Location = new System.Drawing.Point(535, 198);
             this.EditJobLbl.Name = "EditJobLbl";
             this.EditJobLbl.Size = new System.Drawing.Size(62, 13);
             this.EditJobLbl.TabIndex = 53;
             this.EditJobLbl.Text = "Stanowisko";
-            this.EditJobLbl.Click += new System.EventHandler(this.EditJobLbl_Click);
             // 
             // EditPeselLbl
             // 
             this.EditPeselLbl.AutoSize = true;
             this.EditPeselLbl.BackColor = System.Drawing.Color.Transparent;
             this.EditPeselLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditPeselLbl.Location = new System.Drawing.Point(262, 172);
+            this.EditPeselLbl.Location = new System.Drawing.Point(556, 171);
             this.EditPeselLbl.Name = "EditPeselLbl";
             this.EditPeselLbl.Size = new System.Drawing.Size(41, 13);
             this.EditPeselLbl.TabIndex = 52;
             this.EditPeselLbl.Text = "PESEL";
-            this.EditPeselLbl.Click += new System.EventHandler(this.EditPeselLbl_Click);
             // 
             // EditPeselTxt
             // 
             this.EditPeselTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditPeselTxt.Location = new System.Drawing.Point(326, 165);
+            this.EditPeselTxt.Location = new System.Drawing.Point(620, 164);
             this.EditPeselTxt.Name = "EditPeselTxt";
             this.EditPeselTxt.Size = new System.Drawing.Size(176, 20);
             this.EditPeselTxt.TabIndex = 51;
-            this.EditPeselTxt.TextChanged += new System.EventHandler(this.EditPeselTxt_TextChanged);
             // 
             // EditPwzLbl
             // 
             this.EditPwzLbl.AutoSize = true;
             this.EditPwzLbl.BackColor = System.Drawing.Color.Transparent;
             this.EditPwzLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditPwzLbl.Location = new System.Drawing.Point(240, 357);
+            this.EditPwzLbl.Location = new System.Drawing.Point(534, 356);
             this.EditPwzLbl.Name = "EditPwzLbl";
             this.EditPwzLbl.Size = new System.Drawing.Size(63, 13);
             this.EditPwzLbl.TabIndex = 50;
             this.EditPwzLbl.Text = "NumerPWZ";
-            this.EditPwzLbl.Click += new System.EventHandler(this.EditPwzLbl_Click);
             // 
             // EditPwzTxt
             // 
             this.EditPwzTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditPwzTxt.Location = new System.Drawing.Point(326, 354);
+            this.EditPwzTxt.Location = new System.Drawing.Point(620, 353);
             this.EditPwzTxt.Name = "EditPwzTxt";
             this.EditPwzTxt.Size = new System.Drawing.Size(176, 20);
             this.EditPwzTxt.TabIndex = 49;
-            this.EditPwzTxt.TextChanged += new System.EventHandler(this.EditPwzTxt_TextChanged);
             // 
             // RepeatPasswordLbl
             // 
             this.RepeatPasswordLbl.AutoSize = true;
             this.RepeatPasswordLbl.BackColor = System.Drawing.Color.Transparent;
             this.RepeatPasswordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.RepeatPasswordLbl.Location = new System.Drawing.Point(226, 331);
+            this.RepeatPasswordLbl.Location = new System.Drawing.Point(520, 330);
             this.RepeatPasswordLbl.Name = "RepeatPasswordLbl";
             this.RepeatPasswordLbl.Size = new System.Drawing.Size(77, 13);
             this.RepeatPasswordLbl.TabIndex = 48;
             this.RepeatPasswordLbl.Text = "Powtórz Hasło";
-            this.RepeatPasswordLbl.Click += new System.EventHandler(this.RepeatPasswordLbl_Click);
             // 
             // EditPasswordLbl
             // 
             this.EditPasswordLbl.AutoSize = true;
             this.EditPasswordLbl.BackColor = System.Drawing.Color.Transparent;
             this.EditPasswordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditPasswordLbl.Location = new System.Drawing.Point(267, 305);
+            this.EditPasswordLbl.Location = new System.Drawing.Point(561, 304);
             this.EditPasswordLbl.Name = "EditPasswordLbl";
             this.EditPasswordLbl.Size = new System.Drawing.Size(36, 13);
             this.EditPasswordLbl.TabIndex = 47;
             this.EditPasswordLbl.Text = "Hasło";
-            this.EditPasswordLbl.Click += new System.EventHandler(this.EditPasswordLbl_Click);
             // 
             // EditUsernameLbl
             // 
             this.EditUsernameLbl.AutoSize = true;
             this.EditUsernameLbl.BackColor = System.Drawing.Color.Transparent;
             this.EditUsernameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditUsernameLbl.Location = new System.Drawing.Point(201, 278);
+            this.EditUsernameLbl.Location = new System.Drawing.Point(495, 277);
             this.EditUsernameLbl.Name = "EditUsernameLbl";
             this.EditUsernameLbl.Size = new System.Drawing.Size(102, 13);
             this.EditUsernameLbl.TabIndex = 46;
             this.EditUsernameLbl.Text = "Nazwa użytkownika";
-            this.EditUsernameLbl.Click += new System.EventHandler(this.EditUsernameLbl_Click);
             // 
             // EditLastNameLbl
             // 
             this.EditLastNameLbl.AutoSize = true;
             this.EditLastNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.EditLastNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditLastNameLbl.Location = new System.Drawing.Point(250, 247);
+            this.EditLastNameLbl.Location = new System.Drawing.Point(544, 246);
             this.EditLastNameLbl.Name = "EditLastNameLbl";
             this.EditLastNameLbl.Size = new System.Drawing.Size(53, 13);
             this.EditLastNameLbl.TabIndex = 45;
             this.EditLastNameLbl.Text = "Nazwisko";
-            this.EditLastNameLbl.Click += new System.EventHandler(this.EditLastNameLbl_Click);
             // 
             // EditFistNameLbl
             // 
             this.EditFistNameLbl.AutoSize = true;
             this.EditFistNameLbl.BackColor = System.Drawing.Color.Transparent;
             this.EditFistNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditFistNameLbl.Location = new System.Drawing.Point(277, 221);
+            this.EditFistNameLbl.Location = new System.Drawing.Point(571, 220);
             this.EditFistNameLbl.Name = "EditFistNameLbl";
             this.EditFistNameLbl.Size = new System.Drawing.Size(26, 13);
             this.EditFistNameLbl.TabIndex = 44;
             this.EditFistNameLbl.Text = "Imię";
-            this.EditFistNameLbl.Click += new System.EventHandler(this.EditFistNameLbl_Click);
             // 
             // RepeatPasswordTxt
             // 
             this.RepeatPasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.RepeatPasswordTxt.Location = new System.Drawing.Point(326, 328);
+            this.RepeatPasswordTxt.Location = new System.Drawing.Point(620, 327);
             this.RepeatPasswordTxt.Name = "RepeatPasswordTxt";
             this.RepeatPasswordTxt.Size = new System.Drawing.Size(176, 20);
             this.RepeatPasswordTxt.TabIndex = 43;
@@ -239,42 +216,38 @@
             // EditUsernameTxt
             // 
             this.EditUsernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditUsernameTxt.Location = new System.Drawing.Point(326, 275);
+            this.EditUsernameTxt.Location = new System.Drawing.Point(620, 274);
             this.EditUsernameTxt.Name = "EditUsernameTxt";
             this.EditUsernameTxt.Size = new System.Drawing.Size(176, 20);
             this.EditUsernameTxt.TabIndex = 42;
-            this.EditUsernameTxt.TextChanged += new System.EventHandler(this.EditUsernameTxt_TextChanged);
             // 
             // EditPasswordTxt
             // 
             this.EditPasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditPasswordTxt.Location = new System.Drawing.Point(326, 302);
+            this.EditPasswordTxt.Location = new System.Drawing.Point(620, 301);
             this.EditPasswordTxt.Name = "EditPasswordTxt";
             this.EditPasswordTxt.Size = new System.Drawing.Size(176, 20);
             this.EditPasswordTxt.TabIndex = 41;
-            this.EditPasswordTxt.TextChanged += new System.EventHandler(this.EditPasswordTxt_TextChanged);
             // 
             // EditLastNameTxt
             // 
             this.EditLastNameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditLastNameTxt.Location = new System.Drawing.Point(326, 244);
+            this.EditLastNameTxt.Location = new System.Drawing.Point(620, 243);
             this.EditLastNameTxt.Name = "EditLastNameTxt";
             this.EditLastNameTxt.Size = new System.Drawing.Size(176, 20);
             this.EditLastNameTxt.TabIndex = 40;
-            this.EditLastNameTxt.TextChanged += new System.EventHandler(this.EditLastNameTxt_TextChanged);
             // 
             // EditFirstNameTxt
             // 
             this.EditFirstNameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EditFirstNameTxt.Location = new System.Drawing.Point(326, 218);
+            this.EditFirstNameTxt.Location = new System.Drawing.Point(620, 217);
             this.EditFirstNameTxt.Name = "EditFirstNameTxt";
             this.EditFirstNameTxt.Size = new System.Drawing.Size(176, 20);
             this.EditFirstNameTxt.TabIndex = 39;
-            this.EditFirstNameTxt.TextChanged += new System.EventHandler(this.EditFirstNameTxt_TextChanged);
             // 
             // ValidatePeselBtn
             // 
-            this.ValidatePeselBtn.Location = new System.Drawing.Point(514, 165);
+            this.ValidatePeselBtn.Location = new System.Drawing.Point(808, 164);
             this.ValidatePeselBtn.Name = "ValidatePeselBtn";
             this.ValidatePeselBtn.Size = new System.Drawing.Size(107, 23);
             this.ValidatePeselBtn.TabIndex = 58;
@@ -286,15 +259,14 @@
             // 
             this.ValidatePeselLbl.AutoSize = true;
             this.ValidatePeselLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ValidatePeselLbl.Location = new System.Drawing.Point(514, 194);
+            this.ValidatePeselLbl.Location = new System.Drawing.Point(808, 193);
             this.ValidatePeselLbl.Name = "ValidatePeselLbl";
             this.ValidatePeselLbl.Size = new System.Drawing.Size(0, 13);
             this.ValidatePeselLbl.TabIndex = 59;
-            this.ValidatePeselLbl.Click += new System.EventHandler(this.ValidatePeselLbl_Click);
             // 
             // AddEmployeeBtn
             // 
-            this.AddEmployeeBtn.Location = new System.Drawing.Point(506, 407);
+            this.AddEmployeeBtn.Location = new System.Drawing.Point(800, 406);
             this.AddEmployeeBtn.Name = "AddEmployeeBtn";
             this.AddEmployeeBtn.Size = new System.Drawing.Size(115, 23);
             this.AddEmployeeBtn.TabIndex = 60;
@@ -304,7 +276,7 @@
             // 
             // EditEmployeeBtn
             // 
-            this.EditEmployeeBtn.Location = new System.Drawing.Point(374, 407);
+            this.EditEmployeeBtn.Location = new System.Drawing.Point(668, 406);
             this.EditEmployeeBtn.Name = "EditEmployeeBtn";
             this.EditEmployeeBtn.Size = new System.Drawing.Size(115, 23);
             this.EditEmployeeBtn.TabIndex = 61;
@@ -314,7 +286,7 @@
             // 
             // RemoveEmployeeBtn
             // 
-            this.RemoveEmployeeBtn.Location = new System.Drawing.Point(237, 407);
+            this.RemoveEmployeeBtn.Location = new System.Drawing.Point(531, 406);
             this.RemoveEmployeeBtn.Name = "RemoveEmployeeBtn";
             this.RemoveEmployeeBtn.Size = new System.Drawing.Size(115, 23);
             this.RemoveEmployeeBtn.TabIndex = 62;
@@ -324,7 +296,7 @@
             // 
             // ValidatePwzNummerBtn
             // 
-            this.ValidatePwzNummerBtn.Location = new System.Drawing.Point(514, 352);
+            this.ValidatePwzNummerBtn.Location = new System.Drawing.Point(808, 351);
             this.ValidatePwzNummerBtn.Name = "ValidatePwzNummerBtn";
             this.ValidatePwzNummerBtn.Size = new System.Drawing.Size(107, 23);
             this.ValidatePwzNummerBtn.TabIndex = 63;
@@ -336,15 +308,14 @@
             // 
             this.ValidatePasswordsMatchBtn.AutoSize = true;
             this.ValidatePasswordsMatchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ValidatePasswordsMatchBtn.Location = new System.Drawing.Point(514, 331);
+            this.ValidatePasswordsMatchBtn.Location = new System.Drawing.Point(808, 330);
             this.ValidatePasswordsMatchBtn.Name = "ValidatePasswordsMatchBtn";
             this.ValidatePasswordsMatchBtn.Size = new System.Drawing.Size(0, 13);
             this.ValidatePasswordsMatchBtn.TabIndex = 64;
-            this.ValidatePasswordsMatchBtn.Click += new System.EventHandler(this.ValidatePasswordsMatchBtn_Click);
             // 
             // ValidateUsernameExistBtn
             // 
-            this.ValidateUsernameExistBtn.Location = new System.Drawing.Point(514, 273);
+            this.ValidateUsernameExistBtn.Location = new System.Drawing.Point(808, 272);
             this.ValidateUsernameExistBtn.Name = "ValidateUsernameExistBtn";
             this.ValidateUsernameExistBtn.Size = new System.Drawing.Size(107, 23);
             this.ValidateUsernameExistBtn.TabIndex = 65;
@@ -356,104 +327,30 @@
             // 
             this.ValidateUserExistLbl.AutoSize = true;
             this.ValidateUserExistLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ValidateUserExistLbl.Location = new System.Drawing.Point(514, 306);
+            this.ValidateUserExistLbl.Location = new System.Drawing.Point(808, 305);
             this.ValidateUserExistLbl.Name = "ValidateUserExistLbl";
             this.ValidateUserExistLbl.Size = new System.Drawing.Size(0, 13);
             this.ValidateUserExistLbl.TabIndex = 66;
-            this.ValidateUserExistLbl.Click += new System.EventHandler(this.ValidateUserExistLbl_Click);
             // 
             // ValidatePwzNummerLbl
             // 
             this.ValidatePwzNummerLbl.AutoSize = true;
             this.ValidatePwzNummerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ValidatePwzNummerLbl.Location = new System.Drawing.Point(514, 385);
+            this.ValidatePwzNummerLbl.Location = new System.Drawing.Point(808, 384);
             this.ValidatePwzNummerLbl.Name = "ValidatePwzNummerLbl";
             this.ValidatePwzNummerLbl.Size = new System.Drawing.Size(0, 13);
             this.ValidatePwzNummerLbl.TabIndex = 67;
-            this.ValidatePwzNummerLbl.Click += new System.EventHandler(this.ValidatePwzNummerLbl_Click);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.jobPosition,
-            this.firstName,
-            this.lastName,
-            this.pesel,
-            this.nummerPwz,
-            this.username,
-            this.password,
-            this.specialization});
-            this.dataGridView1.DataSource = this.employeeBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 9);
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(17, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(543, 150);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(898, 140);
             this.dataGridView1.TabIndex = 68;
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataSource = typeof(THLIB.Employee);
-            // 
-            // jobPosition
-            // 
-            this.jobPosition.DataPropertyName = "JobPosition";
-            this.jobPosition.HeaderText = "Stanowisko";
-            this.jobPosition.Name = "jobPosition";
-            this.jobPosition.ReadOnly = true;
-            // 
-            // firstName
-            // 
-            this.firstName.DataPropertyName = "FirstName";
-            this.firstName.HeaderText = "Imię";
-            this.firstName.Name = "firstName";
-            this.firstName.ReadOnly = true;
-            // 
-            // lastName
-            // 
-            this.lastName.DataPropertyName = "LastName";
-            this.lastName.HeaderText = "Nazwisko";
-            this.lastName.Name = "lastName";
-            this.lastName.ReadOnly = true;
-            // 
-            // pesel
-            // 
-            this.pesel.DataPropertyName = "Pesel";
-            this.pesel.HeaderText = "PESEL";
-            this.pesel.Name = "pesel";
-            this.pesel.ReadOnly = true;
-            this.pesel.Visible = false;
-            // 
-            // nummerPwz
-            // 
-            this.nummerPwz.HeaderText = "Numer PWZ";
-            this.nummerPwz.Name = "nummerPwz";
-            this.nummerPwz.ReadOnly = true;
-            // 
-            // username
-            // 
-            this.username.DataPropertyName = "Username";
-            this.username.HeaderText = "Nazwa użytkownika";
-            this.username.Name = "username";
-            this.username.ReadOnly = true;
-            this.username.Visible = false;
-            // 
-            // password
-            // 
-            this.password.DataPropertyName = "Password";
-            this.password.HeaderText = "Hasło";
-            this.password.Name = "password";
-            this.password.ReadOnly = true;
-            this.password.Visible = false;
-            // 
-            // specialization
-            // 
-            this.specialization.HeaderText = "Specjalizacja";
-            this.specialization.Name = "specialization";
-            this.specialization.ReadOnly = true;
             // 
             // UcEditUsers
             // 
@@ -488,10 +385,9 @@
             this.Controls.Add(this.EditLastNameTxt);
             this.Controls.Add(this.EditFirstNameTxt);
             this.Name = "UcEditUsers";
-            this.Size = new System.Drawing.Size(649, 445);
+            this.Size = new System.Drawing.Size(930, 448);
             this.Load += new System.EventHandler(this.UcEditUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,14 +423,5 @@
         private System.Windows.Forms.Label ValidateUserExistLbl;
         private System.Windows.Forms.Label ValidatePwzNummerLbl;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource employeeBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobPosition;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pesel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nummerPwz;
-        private System.Windows.Forms.DataGridViewTextBoxColumn username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn specialization;
     }
 }
