@@ -1,0 +1,25 @@
+            Employee admin = new Employee()
+                {
+                    Pesel = "0",
+                    Imiê = "Administrator",
+                    Nazwisko = "Administrator",
+                    NazwaU¿ytkownika = "admin",
+                    Has³o = new Security("admin").ComputeSha256Hash(),
+                    Stanowisko = "Administrator"
+                };
+            string fileName = string.Format("{0}//hospitall.json", Application.StartupPath);
+            if (File.Exists(fileName))
+            {
+                //todo allow user to edit if admin
+            }
+            else
+            {
+
+                using (StreamWriter sw = new StreamWriter(Directory.GetCurrentDirectory() + "\\" + "hospitall.json", false))
+                {
+                    
+
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(sw, admin);
+                }
+            }
