@@ -19,7 +19,7 @@ namespace THUI
             EditScheduleBtn.Enabled = false;
             EmployeesListBtn.Enabled = false;
             EditEmployeesBtn.Enabled = false;
-            collection = FileOperations.FileExistCheck();
+          //  collection = FileOperations.FileExistCheck();
           
         }
 
